@@ -16,6 +16,8 @@ typedef struct dipendente
 Dipendenti* nuovoDipendente();
 Dipendenti* addOnHead(Dipendenti *testa);
 Dipendenti* addOnTail(Dipendenti *testa);
+int contaNodi(Dipendenti *testa, int cont);
+void showList(Dipendenti *testa);
 
 int main()
 {
@@ -24,9 +26,14 @@ int main()
     srand(time(NULL));
 
     testa = addOnHead(testa);
+    fflush(stdin);
     testa = addOnHead(testa);
-
+    fflush(stdin);
     addOnTail(testa);
+    int cont = contaNodi(testa, cont);
+    printf("Totale nodi %d\n", cont);
+
+    showList(testa);
 
     return 0;
 }
@@ -78,9 +85,8 @@ Dipendenti* addOnTail(Dipendenti *testa)
     Dipendenti *nodo, *pLista;
 
     nodo = nuovoDipendente();
-    if(testa == NULL){
-
-    }
+    if(testa == NULL)
+        testa = nodo;
     else{
         pLista = testa;
 
@@ -91,4 +97,25 @@ Dipendenti* addOnTail(Dipendenti *testa)
     }
 
     return testa;
+}
+
+int contaNodi(Dipendenti *testa, int cont)
+{
+    while(testa != NULL){
+        cont++;
+        testa = testa->next;
+    }
+    return cont;
+}
+
+void showList(Dipendenti *testa)
+{
+    int i = 0;
+    while(testa != NULL){
+        printf("\nLista nodo %d\n", i);
+        printf("Cognome: %s\n", testa->cognome);
+        printf("Eta': %d\n", testa->eta);
+        testa = testa->next;
+        i++;
+    }
 }
