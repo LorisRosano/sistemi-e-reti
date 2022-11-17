@@ -110,9 +110,10 @@ int contaNodi(Dipendenti *testa, int cont)
 
 void showList(Dipendenti *testa)
 {
-    int i = 0;
+    int i = 1;
     while(testa != NULL){
         printf("\nLista nodo %d\n", i);
+        printf("Matricola: %s\n", testa->matricola);
         printf("Cognome: %s\n", testa->cognome);
         printf("Eta': %d\n", testa->eta);
         testa = testa->next;
