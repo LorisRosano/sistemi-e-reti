@@ -15,6 +15,7 @@ typedef struct dipendente
 
 Dipendenti* nuovoDipendente();
 Dipendenti* addOnHead(Dipendenti *testa);
+Dipendenti* addOnTail(Dipendenti *testa);
 
 int main()
 {
@@ -23,6 +24,9 @@ int main()
     srand(time(NULL));
 
     testa = addOnHead(testa);
+    testa = addOnHead(testa);
+
+    addOnTail(testa);
 
     return 0;
 }
@@ -43,7 +47,7 @@ Dipendenti* nuovoDipendente()
     printf("Eta' --> ");
     scanf("%d", &eta);
 
-    pDip = (Dipendeti*) malloc(sizeof(Dipendenti));
+    pDip = (Dipendenti*) malloc(sizeof(Dipendenti));
     strcpy(pDip->matricola, matr);
     strcpy(pDip->cognome, cogn);
     pDip->eta = eta;
@@ -58,12 +62,32 @@ Dipendenti* addOnHead(Dipendenti *testa)
 
     nodo = nuovoDipendente();
 
-    if(testa == NULL)
+    if(testa == NULL) //se è null vuol dire che non ci sono nodi nella lista
         testa = nodo;
-    else
+    else //se non è null vuol dire che c'è già un indirizzo
     {
         nodo->next = testa;
         testa = nodo;
+    }
+
+    return testa;
+}
+
+Dipendenti* addOnTail(Dipendenti *testa)
+{
+    Dipendenti *nodo, *pLista;
+
+    nodo = nuovoDipendente();
+    if(testa == NULL){
+
+    }
+    else{
+        pLista = testa;
+
+        while(pLista->next != NULL)
+            pLista = pLista->next;
+
+        pLista->next = nodo;
     }
 
     return testa;
