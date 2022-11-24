@@ -18,7 +18,7 @@ Dipendenti* addOnHead(Dipendenti *testa);
 Dipendenti* addOnTail(Dipendenti *testa);
 int contaNodi(Dipendenti *testa, int cont);
 void showList(Dipendenti *testa);
-
+Dipendenti* addByPos(Dipendenti *testa);
 int main()
 {
     Dipendenti *testa = NULL;
@@ -30,6 +30,8 @@ int main()
     testa = addOnHead(testa);
     fflush(stdin);
     addOnTail(testa);
+    fflush(stdin);
+    testa = addByPos(testa);
     int cont = contaNodi(testa, cont);
     printf("Totale nodi %d\n", cont);
 
@@ -51,8 +53,7 @@ Dipendenti* nuovoDipendente()
     printf("Cognome --> ");
     gets(cogn);
 
-    printf("Eta' --> ");
-    scanf("%d", &eta);
+    eta = rand() % 30;
 
     pDip = (Dipendenti*) malloc(sizeof(Dipendenti));
     strcpy(pDip->matricola, matr);
@@ -101,9 +102,12 @@ Dipendenti* addOnTail(Dipendenti *testa)
 
 int contaNodi(Dipendenti *testa, int cont)
 {
-    while(testa != NULL){
+    Dipendenti *pLista;
+    pLista = testa;
+
+    while(pLista != NULL){
         cont++;
-        testa = testa->next;
+        pLista = pLista->next;
     }
     return cont;
 }
@@ -111,12 +115,48 @@ int contaNodi(Dipendenti *testa, int cont)
 void showList(Dipendenti *testa)
 {
     int i = 1;
-    while(testa != NULL){
-        printf("\nLista nodo %d\n", i);
-        printf("Matricola: %s\n", testa->matricola);
-        printf("Cognome: %s\n", testa->cognome);
-        printf("Eta': %d\n", testa->eta);
-        testa = testa->next;
+    Dipendenti *pLista;
+    pLista = testa;
+
+    if(pLista == NULL)
+        printf("\nLista Vuota.");
+    else{
+        printf("\nLista Dipendenti\n");
+        printf("N. Nodo\tMatr.\tCognome\tEta'\t\n");
+        while(pLista != NULL){
+        printf("%d\t", i);
+        printf("%s\t", pLista->matricola);
+        printf("%s\t", pLista->cognome);
+        printf("%d\t\n\n", pLista->eta);
+        pLista = pLista->next;
         i++;
+        }
+    }
+
+}
+
+Dipendenti* addByPos(Dipendenti *testa)
+{
+    int n = 0;
+    Dipendenti *pLista;
+    pLista = testa;
+    printf("Posizione: ");
+    scanf("%d", &n);
+    int cont = contaNodi(testa, cont);
+    if(n <= 1){
+        fflush(stdin);
+        testa = addOnHead(testa);
+    }
+    else if(n > cont){
+        fflush(stdin);
+        testa = addOnTail(testa);
+    }
+
+    else{
+        Dipendenti *nodo;
+        nodo = nuovoDipendente();
+        for(int i = 0; i < n; i++)
+            pLista = pLista->next;
+        pLista = nodo;
     }
 }
