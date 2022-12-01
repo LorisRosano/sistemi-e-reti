@@ -20,7 +20,7 @@ int contaNodi(Dipendenti *testa, int cont);
 void showList(Dipendenti *testa);
 Dipendenti* addByPos(Dipendenti *testa);
 Dipendenti* delByPos(Dipendenti *testa);
-Dipendenti* addOrdinato(testa);
+Dipendenti* addOrdinato(Dipendenti *testa);
 int main()
 {
     Dipendenti *testa = NULL;
@@ -196,7 +196,7 @@ Dipendenti* delByPos(Dipendenti *testa)
     free(pDel);
 }
 
-Dipendenti* addOrdinato(testa)
+Dipendenti* addOrdinato(Dipendenti *testa)
 {
     Dipendenti *nodo;
     Dipendenti *pLista, *pPrec;
@@ -205,15 +205,21 @@ Dipendenti* addOrdinato(testa)
     if(testa == NULL)
         testa = nodo;
     else{
-        pPrec = testa;
-        pLista = testa->next;
-
-        while(pLista != NULL && strcmp(nodo->cognome, pLista->cognome) > 0){
-            pPrec = pLista;
-            pLista = pLista->next;
+        if(strcmp(testa->cognome, nodo->cognome) > 0){
+            nodo->next = testa;
+            testa = nodo;
         }
-        nodo->next = pLista;
-        pPrec->next = nodo;
+        else{
+            pPrec = testa;
+            pLista = testa->next;
+            while(pLista != NULL && strcmp(nodo->cognome, pLista->cognome) > 0){
+                pPrec = pLista;
+                pLista = pLista->next;
+            }
+            nodo->next = pLista;
+            pPrec->next = nodo;
+        }
+
     }
 
     return testa;
