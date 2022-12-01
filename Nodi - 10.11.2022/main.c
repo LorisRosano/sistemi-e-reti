@@ -21,6 +21,7 @@ void showList(Dipendenti *testa);
 Dipendenti* addByPos(Dipendenti *testa);
 Dipendenti* delByPos(Dipendenti *testa);
 Dipendenti* addOrdinato(Dipendenti *testa);
+Dipendenti* sortListByCogn(Dipendenti *testa);
 int main()
 {
     Dipendenti *testa = NULL;
@@ -39,12 +40,14 @@ int main()
     for(int i = 0; i < 5; i++){
         testa = addOrdinato(testa);
     }
+    sortListByCogn(testa);
 
     int cont = contaNodi(testa, cont);
     printf("Totale nodi %d\n", cont);
 
     showList(testa);
     delByPos(testa);
+
 
     showList(testa);
 
@@ -223,4 +226,36 @@ Dipendenti* addOrdinato(Dipendenti *testa)
     }
 
     return testa;
+}
+
+Dipendenti* sortListByCogn(Dipendenti *testa)
+{
+    int rifare = 1;
+    char aus[MAX];
+    int ausEta;
+
+    Dipendenti *l1 = NULL;
+    Dipendenti *l2 = NULL;
+    while(rifare == 1){
+        rifare = 0;
+        for(l1 = testa; l1->next != NULL; l1 = l1->next){
+            for(l2 = l1->next; l2 != NULL; l2 = l2->next){
+                if(strcmp(l1->cognome, l2->cognome) > 0){
+                    rifare = 1;
+
+                    strcpy(aus, l1->matricola);
+                    strcpy(l1->matricola, l2->matricola);
+                    strcpy(l2->matricola, aus);
+
+                    strcpy(aus, l1->cognome);
+                    strcpy(l1->cognome, l2->cognome);
+                    strcpy(l2->cognome, aus);
+
+                    ausEta = l1->eta;
+                    l1->eta = l2->eta;
+                    l2->eta = ausEta;
+                }
+            }
+        }
+    }
 }
