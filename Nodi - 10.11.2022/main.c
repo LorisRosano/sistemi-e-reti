@@ -19,21 +19,32 @@ Dipendenti* addOnTail(Dipendenti *testa);
 int contaNodi(Dipendenti *testa, int cont);
 void showList(Dipendenti *testa);
 Dipendenti* addByPos(Dipendenti *testa);
+Dipendenti* delByPos(Dipendenti *testa);
+Dipendenti* addOrdinato(testa);
 int main()
 {
     Dipendenti *testa = NULL;
 
     srand(time(NULL));
 
-    testa = addOnHead(testa);
+    /*testa = addOnHead(testa);
     fflush(stdin);
     testa = addOnHead(testa);
     fflush(stdin);
     addOnTail(testa);
     fflush(stdin);
     testa = addByPos(testa);
+    */
+
+    for(int i = 0; i < 5; i++){
+        testa = addOrdinato(testa);
+    }
+
     int cont = contaNodi(testa, cont);
     printf("Totale nodi %d\n", cont);
+
+    showList(testa);
+    delByPos(testa);
 
     showList(testa);
 
@@ -153,10 +164,57 @@ Dipendenti* addByPos(Dipendenti *testa)
     }
 
     else{
+        fflush(stdin);
         Dipendenti *nodo;
         nodo = nuovoDipendente();
         for(int i = 0; i < n; i++)
             pLista = pLista->next;
         pLista = nodo;
     }
+}
+
+Dipendenti* delByPos(Dipendenti *testa)
+{
+    Dipendenti *pDel, *pPrec;
+    int pos = 0, i = 0;
+    pPrec = testa;
+    printf("Inserisci la pos del nodo da eliminare: ");
+    scanf("%d", &pos);
+
+    if (pos == 1){
+        pDel = testa;
+        testa = testa->next;
+    }
+    else{
+        pPrec = testa;
+        for(i = 2; (i < pos) && pDel->next != NULL; i++){
+                pPrec = pDel;
+                pDel = pDel->next;
+        }
+        pPrec->next = pDel->next;
+    }
+    free(pDel);
+}
+
+Dipendenti* addOrdinato(testa)
+{
+    Dipendenti *nodo;
+    Dipendenti *pLista, *pPrec;
+    nodo = nuovoDipendente();
+
+    if(testa == NULL)
+        testa = nodo;
+    else{
+        pPrec = testa;
+        pLista = testa->next;
+
+        while(pLista != NULL && strcmp(nodo->cognome, pLista->cognome) > 0){
+            pPrec = pLista;
+            pLista = pLista->next;
+        }
+        nodo->next = pLista;
+        pPrec->next = nodo;
+    }
+
+    return testa;
 }
