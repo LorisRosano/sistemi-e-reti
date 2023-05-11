@@ -9,3 +9,14 @@ C:\Users\l.rosano.2306\Desktop\01_SocketUDP\obj\Debug\01_SocketUDP.csproj.Genera
 C:\Users\l.rosano.2306\Desktop\01_SocketUDP\obj\Debug\01_SocketUDP.csproj.CoreCompileInputs.cache
 C:\Users\l.rosano.2306\Desktop\01_SocketUDP\obj\Debug\01_SocketUDP.exe
 C:\Users\l.rosano.2306\Desktop\01_SocketUDP\obj\Debug\01_SocketUDP.pdb
+C:\Users\l.rosano.2306\Desktop\sistemi-e-reti\01_SocketUDP_Client\bin\Debug\01_SocketUDP.exe.config
+C:\Users\l.rosano.2306\Desktop\sistemi-e-reti\01_SocketUDP_Client\bin\Debug\01_SocketUDP.exe
+C:\Users\l.rosano.2306\Desktop\sistemi-e-reti\01_SocketUDP_Client\bin\Debug\01_SocketUDP.pdb
+C:\Users\l.rosano.2306\Desktop\sistemi-e-reti\01_SocketUDP_Client\obj\Debug\01_SocketUDP.csproj.AssemblyReference.cache
+C:\Users\l.rosano.2306\Desktop\sistemi-e-reti\01_SocketUDP_Client\obj\Debug\01_SocketUDP.csproj.SuggestedBindingRedirects.cache
+C:\Users\l.rosano.2306\Desktop\sistemi-e-reti\01_SocketUDP_Client\obj\Debug\_01_SocketUDP.Form1.resources
+C:\Users\l.rosano.2306\Desktop\sistemi-e-reti\01_SocketUDP_Client\obj\Debug\_01_SocketUDP.Properties.Resources.resources
+C:\Users\l.rosano.2306\Desktop\sistemi-e-reti\01_SocketUDP_Client\obj\Debug\01_SocketUDP.csproj.GenerateResource.cache
+C:\Users\l.rosano.2306\Desktop\sistemi-e-reti\01_SocketUDP_Client\obj\Debug\01_SocketUDP.csproj.CoreCompileInputs.cache
+C:\Users\l.rosano.2306\Desktop\sistemi-e-reti\01_SocketUDP_Client\obj\Debug\01_SocketUDP.exe
+C:\Users\l.rosano.2306\Desktop\sistemi-e-reti\01_SocketUDP_Client\obj\Debug\01_SocketUDP.pdb

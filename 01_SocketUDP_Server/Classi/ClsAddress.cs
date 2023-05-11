@@ -10,9 +10,9 @@ namespace _01_SocketUDP_Server.Classi
 {
     public class ClsAddress
     {
-        public static List<IPAddress> ipList;
+        public static List<IPAddress> ipList = new List<IPAddress>();
 
-        public ClsAddress() { ipList = new List<IPAddress>();}
+        public ClsAddress() { }
 
         public static void cercaIP()
         {
