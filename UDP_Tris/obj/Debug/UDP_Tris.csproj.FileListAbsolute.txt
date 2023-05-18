@@ -1,0 +1,11 @@
+C:\Users\l.rosano.2306\Desktop\UDP_Tris\bin\Debug\UDP_Tris.exe.config
+C:\Users\l.rosano.2306\Desktop\UDP_Tris\bin\Debug\UDP_Tris.exe
+C:\Users\l.rosano.2306\Desktop\UDP_Tris\bin\Debug\UDP_Tris.pdb
+C:\Users\l.rosano.2306\Desktop\UDP_Tris\obj\Debug\UDP_Tris.csproj.AssemblyReference.cache
+C:\Users\l.rosano.2306\Desktop\UDP_Tris\obj\Debug\UDP_Tris.csproj.SuggestedBindingRedirects.cache
+C:\Users\l.rosano.2306\Desktop\UDP_Tris\obj\Debug\UDP_Tris.Form1.resources
+C:\Users\l.rosano.2306\Desktop\UDP_Tris\obj\Debug\UDP_Tris.Properties.Resources.resources
+C:\Users\l.rosano.2306\Desktop\UDP_Tris\obj\Debug\UDP_Tris.csproj.GenerateResource.cache
+C:\Users\l.rosano.2306\Desktop\UDP_Tris\obj\Debug\UDP_Tris.csproj.CoreCompileInputs.cache
+C:\Users\l.rosano.2306\Desktop\UDP_Tris\obj\Debug\UDP_Tris.exe
+C:\Users\l.rosano.2306\Desktop\UDP_Tris\obj\Debug\UDP_Tris.pdb
